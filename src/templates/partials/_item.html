@@ -1,0 +1,56 @@
+{% import "./_mixins.html" as mixin %}
+
+<div class="section item-page"> <!-- start .item-page -->
+	<div class="section__inner">
+		<article class="the-item"> <!-- start .the-item -->
+			<h2 class="the-item__title page__title">Кухонный смеситель SPRF 8107</h2>
+			<div class="the-item__gallery">
+				<div class="gallery__image"><a href="#"><img src="images/catalog/SPRF_8107.png" alt=""></a></div>
+				<div class="gallery__images">
+					<a href="images/catalog/SPRF_8107.png"><img src="images/catalog/SPRF_8107.png" alt=""></a>
+					<a href="images/catalog/SPRF_8109.png"><img src="images/catalog/SPRF_8109.png" alt=""></a>
+					<a href="images/catalog/SPRF_8110.png"><img src="images/catalog/SPRF_8110.png" alt=""></a>
+					<a href="images/catalog/SPRF_8113.png"><img src="images/catalog/SPRF_8113.png" alt=""></a>
+				</div>
+			</div>
+			<div class="the-item__info">
+				<p><span class="info__title">Цвет:</span><span class="info__value">сатинированный, полированный</span></p>
+				<p><span class="info__title">Ширина:</span><span class="info__value">220 мм.</span></p>
+				<p><span class="info__title">Высота:</span><span class="info__value">334 мм.</span></p>
+				<p><span class="info__title">Комплектность:</span><span class="info__value">гибкая подводка 1/2 дюйма</span></p>
+				<p><span class="info__title">Количество в упаковке:</span><span class="info__value">12 шт.</span></p>
+				<p><span class="info__title">Высота излива:</span><span class="info__value">302 мм.</span></p>
+				<p><span class="info__title">Керамический картридж:</span><span class="info__value">35 мм.</span></p>
+				<p><span class="info__title">Предельное давление:</span><span class="info__value">900 кПа</span></p>
+				<p><span class="info__title">Рабочая температура:</span><span class="info__value">65°C</span></p>
+				<div class="info__colors">
+					<span class="info__title">Вид обработки:</span>
+					<div class="info__value">
+						<div class="image-item">
+							<img src="images/item/glance.jpg" alt="">
+							<span>Глянец</span>
+						</div>
+						<div class="image-item">
+							<img src="images/item/satin.jpg" alt="">
+							<span>Сатин</span>
+						</div>
+					</div>
+				</div>
+				<ul class="info__badges">
+					{% for i in range(1, 6) %}
+					<li><img src="images/item/{{ i }}.jpg" alt=""></li>
+					{% endfor %}
+				</ul>
+			</div>
+		</article> <!-- start .the-item -->
+
+		<h3 class="section__title">Возможно вас заинтересуют:</h3>
+		<section class="similar-products catalog">
+			{% for t, i in catalog %}
+				{% if loop.index <= 4 %}
+					{{ mixin.catalog_item(t, i) }}
+				{% endif %}
+			{% endfor %}
+		</section>
+	</div>
+</div> <!-- end .item-page -->

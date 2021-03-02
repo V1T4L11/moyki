@@ -1,0 +1,24 @@
+<div class="section main-menu"> <!-- start .main-menu -->
+	<div class="section__inner">
+		<div class="main-menu__menu">
+			<a href="#" class="menu-toggler" id="menuToggler">
+				<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24"><path fill="#90a4ae" d="M24 6h-24v-4h24v4zm0 4h-24v4h24v-4zm0 8h-24v4h24v-4z"/></svg>
+			</a>
+			<nav class="main-nav" id="mainNav">
+				<ul>
+				{% for item in menu %}
+					<li class="menu-item"><a href="#">{{ item }}</a></li>
+				{% endfor %}
+				</ul>
+			</nav>
+		</div>
+		<div class="main-menu__search">
+			<div class="search-widget"> <!-- start .search-widget -->
+				<input type="text" placeholder="поиск">
+				<a href="#" class="with-icon">
+					<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path fill="#fff" d="M21.172 24l-7.387-7.387c-1.388.874-3.024 1.387-4.785 1.387-4.971 0-9-4.029-9-9s4.029-9 9-9 9 4.029 9 9c0 1.761-.514 3.398-1.387 4.785l7.387 7.387-2.828 2.828zm-12.172-8c3.859 0 7-3.14 7-7s-3.141-7-7-7-7 3.14-7 7 3.141 7 7 7z"/></svg>
+				</a>
+			</div> <!-- end .search-widget -->
+		</div>
+	</div>
+</div> <!-- end .main-menu -->

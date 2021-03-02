@@ -1,0 +1,50 @@
+// @import url('https://fonts.googleapis.com/css?family=Arsenal:400,700&subset=cyrillic');
+@import url('https://fonts.googleapis.com/css?family=Rubik:300,400,500&subset=cyrillic');
+/* 3rd party styles */
+@import "susy";
+@import "rem";
+@import 'plugins/svg-grid';
+@import "breakpoint";
+@import "modularscale";
+
+$ff: 'Rubik', sans-serif;
+
+$base-fosz: 16px;
+
+$text-color: #263238;
+
+$modularscale: (
+  base: $base-fosz,
+  ratio: 1.4
+);
+
+/* init styles */
+*, *:before, *:after {
+	box-sizing: border-box;
+}
+body {
+	font-family: $ff;
+	font-size: $base-fosz;
+	font-weight: 300;
+	line-height: 1.4;
+	color: $text-color;
+	margin: 0;
+	padding: 0;
+}
+
+a {
+	color: $text-color;
+	text-decoration: none;
+	&:hover {
+		color: $primary;
+		text-decoration: underline;
+	}
+}
+
+p {
+	margin: ms(-2) 0;
+}
+
+small {
+	font-size: rem(14px);
+}

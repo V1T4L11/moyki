@@ -1,0 +1,19 @@
+{% import "./_mixins.html" as mixin %}
+
+<div class="section catalog-page"> <!-- start .catalog-page -->
+	<div class="section__inner">
+		<section class="catalog catalog-categories">
+			{% for t, i in catalog_categories %}
+				{{ mixin.catalog_item(t, i) }}
+			{% endfor %}
+		</section>
+		<div class="page__header">
+			<h2 class="page__title"><a href="#">Каталог продукции</a><span class="arrow">&raquo;</span>Все товары</h2>
+		</div>
+		<section class="catalog">
+			{% for t, i in catalog %}
+				{{ mixin.catalog_item(t, i) }}
+			{% endfor %}
+		</section>
+	</div>
+</div> <!-- end .catalog-page -->

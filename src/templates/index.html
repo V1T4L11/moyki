@@ -1,0 +1,20 @@
+---
+title: Index page
+---
+{% set pageTitle="Главная" %}
+
+{% extends "layouts/_layout.html" %}
+
+{% block topbar %}
+{% include "partials/_topbar.html" %}
+{% endblock %}
+
+{% block content %}
+
+{% include "partials/_hero-slider.html" %}
+{% include "partials/_catalog_sliders.html" %}
+{% include "partials/_widget_know_more.html" %}
+
+{% include "partials/_bottom-banner.html" %}
+
+{% endblock %}

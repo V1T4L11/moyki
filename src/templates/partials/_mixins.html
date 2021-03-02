@@ -1,0 +1,12 @@
+{% macro icon(i) %}
+<svg class="icon icon-{{i}}"><use xlink:href="#icon-{{i}}"></use></svg>
+{% endmacro %}
+
+{% macro catalog_item(t, image) %}
+<div class="catalog__item">
+	<a class="item__wrapper" href="item.html">
+		<img class="item__image" src="images/catalog/{{ image }}" alt="{{ t }}">
+		<p class="item__title">{{ t }}</p>
+	</a>
+</div> <!-- end .catalog__item -->
+{% endmacro %}

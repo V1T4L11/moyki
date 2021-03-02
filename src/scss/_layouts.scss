@@ -1,0 +1,275 @@
+// breakpoints
+$bp_xs: 479px;
+$bp_sm: 576px;
+$bp_md: 768px;
+$bp_lg: 992px;
+$bp_xl: 1280px;
+
+$pd_md: 30px;
+$pd_lg: 30px;
+$pd_xl: 30px;
+
+$container-xs: 98vw;
+$container-sm: 96vw;
+$container-md: ( $bp_md - ( $pd_md * 2 ));
+$container-lg: ( $bp_lg - ( $pd_lg * 2 ));
+$container-xl: ( $bp_xl - ( $pd_xl * 2 ));
+
+$susy: (
+  'svg-grid-colors': '#f1f1ec',
+  'columns': susy-repeat(12)
+);
+
+.page {
+	@include container;
+}
+
+.section {
+  width: 100%;
+  &__inner {
+    display: flex;
+    // background: susy-svg-grid() no-repeat scroll;
+  	@include container($container-xs);
+  	@include breakpoint($bp_sm) {
+      @include container($container-sm);
+    }
+  	@include breakpoint($bp_md) {
+      @include container($container-md);
+    }
+  	@include breakpoint($bp_lg) {
+      @include container($container-lg);
+    }
+  	@include breakpoint($bp_xl) {
+      @include container($container-xl);
+    }
+  }
+}
+
+.topbar {
+  .section__inner {
+    flex-wrap: wrap;
+    @include breakpoint($bp_lg) {
+      flex-wrap: nowrap;
+    }
+  }
+  padding: ms(0) 0;
+  &__left,
+  &__right {
+    @include col(12);
+    @include breakpoint($bp_sm) {
+      padding: 0 span(1) !important;
+    }
+    @include breakpoint($bp_lg) {
+      @include col(6);
+    }
+  }
+}
+
+.header {
+  padding: ms(0) 0;
+  .section__inner {
+    flex-wrap: wrap;
+    @include breakpoint($bp_lg) {
+      flex-wrap: nowrap;
+    }
+  }
+  &__logo {
+    @include col(12);
+    @include breakpoint($bp_lg) {
+      @include col(4);
+      padding-right: span(1);
+    }
+  }
+  &__catalog {
+    @include col(12);
+    @include breakpoint($bp_lg) {
+     @include col(3);
+    }
+  }
+  &__links {
+    @include col(12);
+    @include breakpoint($bp_lg) {
+      @include col(2);
+      padding-left: span(1);
+    }
+  }
+  &__contacts {
+    @include col(12);
+    @include breakpoint($bp_lg) {
+      @include col(3);
+    }
+  }
+}
+
+.main-menu {
+  &__menu {
+    @include col(2);
+    order: 2;
+    @include breakpoint($bp_lg) {
+      @include col(9);
+      order: 1;
+    }
+  }
+  &__search {
+    @include col(10);
+    order: 1;
+    @include breakpoint($bp_lg) {
+      @include col(3);
+      order: 2;
+    }
+  }
+}
+
+.bottom-banner {
+  &__text {
+    @include col(12);
+    @include breakpoint($bp_lg) {
+      @include col(7);
+    }
+  }
+  &__input {
+    @include col(12);
+    @include breakpoint($bp_lg) {
+      @include col(5);
+    }
+  }
+}
+
+.footer {
+  .section__inner {
+    flex-wrap: wrap;
+    @include breakpoint($bp_lg) {
+      flex-wrap: nowrap;
+    }
+  }
+  &__copyright {
+    @include col(12);
+    @include breakpoint($bp_lg) {
+      @include col(3);
+    }
+  }
+  &__menu {
+    @include col(12);
+    @include breakpoint($bp_lg) {
+      @include col(2);
+    }
+  }
+  &__contacts {
+    @include col(12);
+    @include breakpoint($bp_lg) {
+      @include col(3);
+    }
+  }
+}
+
+.catalog-sliders {
+  .section__inner {
+    display: block;
+  }
+  .slider--left,
+  .slider--right {
+    display: block;
+    @include col(12);
+    @include breakpoint($bp_lg) {
+      display: inline-block;
+      vertical-align: top;
+      @include col(6);
+      width: span(6);
+    }
+  }
+}
+
+.widget {
+  .section__inner {
+    flex-wrap: wrap;
+    @include breakpoint($bp_lg) {
+      flex-wrap: nowrap;
+    }
+  }
+  .widget__body {
+    @include col(12);
+  }
+  &--half-width {
+    .widget__body {
+      @include col(12);
+      @include breakpoint($bp_lg) {
+        @include col(6);
+      }
+    }
+  }
+  &--third-width {
+    .widget__body {
+      @include col(12);
+      @include breakpoint($bp_lg) {
+        @include col(4);
+      }
+    }
+  }
+}
+
+.catalog-page {
+  .section__inner {
+    display: block;
+  }
+}
+
+.catalog {
+  flex-wrap: wrap;
+  align-items: stretch;
+  &__item {
+    @include col(12);
+    flex-grow: 1;
+    @include breakpoint($bp_xs) {
+      @include col(6);
+      max-width: span(6 wide);
+    }
+    @include breakpoint($bp_sm) {
+      @include col(4);
+      max-width: span(4 wide);
+    }
+    @include breakpoint($bp_lg) {
+      @include col(3);
+      max-width: span(3 wide);
+    }
+  }
+}
+
+.item-page {
+  .section__inner {
+    display: block;
+  }
+}
+
+.the-item {
+  display: flex;
+  flex-wrap: wrap;
+  &__title {
+    width: 100%;
+  }
+  &__gallery,
+  &__info {
+    @include col(12);
+    @include breakpoint($bp_lg) {
+      @include col(6);
+    }
+  }
+  &__info {
+    @include breakpoint($bp_lg) {
+      @include col(5);
+      padding-right: span(1 wide);
+    }
+  }
+  &__gallery {
+    @include breakpoint($bp_lg) {
+      @include col(5);
+      padding-left: span(1 wide);
+    }
+  }
+}
+
+.about-section {
+  .section__inner {
+    display: block;
+    padding: 0 span(1 wide);
+  }
+}
